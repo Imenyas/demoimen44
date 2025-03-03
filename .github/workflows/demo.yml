@@ -1,0 +1,26 @@
+name: DemoImen Workflow
+
+on:
+  push:
+    branches:
+      - master  # Change to 'main' if your branch is named 'main'
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  demo_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Display Date and Message
+        run: |
+          echo "Hello, welcome to DemoImen project!"
+          echo "Today's date is: $(date)"
+
+      - name: List Files in Repository
+        run: ls -la
